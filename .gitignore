@@ -1,4 +1,5 @@
 .DS_Store
+.aidlc/**
 .amazonq/**
 .claude/**
 !.claude/settings.json
