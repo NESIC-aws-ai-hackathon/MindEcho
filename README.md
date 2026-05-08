@@ -26,9 +26,11 @@ MindEchoは、ユーザーが抱える「言語化の壁」を取り払うので
 ---
 
 ## 3. 主な機能 (Core Units)
-- **Media Context Extraction**: 画像や音楽から「エモさの成分」を自動抽出。
+- **Media Context Extraction**: 画像・音楽・漫画・小説から「エモさの成分」を自動抽出。
+- **Context Questionnaire**: メディアに応じたAI動的生成の選択式設問で、ユーザーの文脈を補完。
 - **Emotional Annotation Wizard**: 「整理の手間」を排除する、タップ式の感情選択インターフェース。
-- **Semantic Amplifier**: わずかな入力から、SNSや書評で「センスが良い」と評価されるレベルの文章へ超解像変換。
+- **Semantic Amplifier**: わずかな入力から、SNS投稿・日記・レビュー記事として「センスが良い」と評価されるレベルの文章へ超解像変換。
+- **SNS Direct Share**: 生成文章をWeb Intent / Web Share APIでワンタップSNS投稿。
 
 ---
 
@@ -38,8 +40,80 @@ MindEchoは、ユーザーが抱える「言語化の壁」を取り払うので
 
 ---
 
-## 5. AI-DLCの実践
+## 5. 技術スタック
+
+| 領域 | 技術 |
+|---|---|
+| **Frontend** | React (Next.js) |
+| **Backend** | Python (FastAPI) |
+| **AI/ML** | AWS Bedrock (Claude/Titan) |
+| **Database** | Amazon RDS (PostgreSQL) |
+| **Storage** | Amazon S3 |
+| **Authentication** | JWT + bcrypt |
+| **Deploy** | AWS (ECS or Lambda + API Gateway) |
+
+---
+
+## 6. プロジェクト構成（モノレポ）
+
+```
+mindecho/
+├── backend/                    # FastAPI バックエンド
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── core/              # 設定・DB・ミドルウェア・AWSクライアント
+│   │   ├── auth/              # Unit 0: 認証
+│   │   ├── media/             # Unit 1: メディア解析
+│   │   │   └── analyzers/     # 画像/音楽/漫画/小説 解析器
+│   │   ├── cognitive/         # Unit 2: 認知マッピング
+│   │   ├── synthesis/         # Unit 3: 文章合成
+│   │   ├── data/              # データ管理
+│   │   └── persona/           # Unit 4: パーソナライゼーション (stub)
+│   ├── alembic/               # DBマイグレーション
+│   └── tests/
+├── frontend/                   # Next.js フロントエンド
+│   ├── pages/                 # 10ページ構成
+│   ├── components/            # 共有コンポーネント
+│   ├── lib/                   # APIクライアント
+│   └── types/                 # 型定義
+├── aidlc-docs/                # AI-DLC設計ドキュメント
+└── docker-compose.yml
+```
+
+---
+
+## 7. ユニット構成
+
+| Unit | 名称 | 責務 | MVP |
+|---|---|---|---|
+| Unit 0 | Auth & Core Infrastructure | 認証、DB基盤、AWSクライアント、データ管理 | ✓ |
+| Unit 1 | Media Analysis | メディアアップロード、S3保存、AI解析（4種別） | ✓ |
+| Unit 2 | Cognitive Mapping | コンテクスト設問生成、感情選択肢生成 | ✓ |
+| Unit 3 | Sentence Synthesis | 文章生成（3形式）、再生成、編集 | ✓ |
+| Unit 4 | User Persona Tuning | パーソナライゼーション | stub |
+| Unit F | Frontend Integration | Next.js 全ページ実装 | ✓ |
+
+**開発順**: Unit 0 → Unit 1 → Unit 2 → Unit 3 → Unit 4 → Unit F
+
+---
+
+## 8. AI-DLCの実践
+
 本プロジェクトは、AI-Driven Development Lifecycle（AI-DLC）に基づき、インセプションフェーズからAIを活用した意思決定を行っています。
 
-- **Intent-Driven**: 「人をダメにする」という抽象的なテーマを、AIと掛け合わせ、具体的な「思考アウトソーシング」の価値へと変換。
-- **Unit Decomposition**: 解析、感情定義、文章生成、パーソナライズの4つの論理ユニットに分解し、AIによる自律的な開発サイクルを可能にしています。
+### 完了済みフェーズ
+- **Workspace Detection**: Greenfield プロジェクト検出
+- **Requirements Analysis**: 8機能要件 + 6非機能要件の定義、技術スタック選定
+- **User Stories**: 4ペルソナ、7ジャーニー、21ストーリー（15 Must Have / 6 Should Have）
+- **Workflow Planning**: 実行計画策定（6ステージ実行、3ステージスキップ）
+- **Application Design**: コンポーネント設計、APIエンドポイント設計（19本）、DBスキーマ設計（11テーブル）
+- **Units Generation**: 6ユニット分解、依存関係定義、ストーリーマッピング（100%カバレッジ）
+
+### 次フェーズ
+- **CONSTRUCTION**: Per-Unit Functional Design → Code Generation → Build and Test
+
+### 設計ドキュメント
+設計成果物は `aidlc-docs/` 配下に格納:
+- `aidlc-docs/inception/requirements/` — 要件定義
+- `aidlc-docs/inception/user-stories/` — ペルソナ・ストーリー
+- `aidlc-docs/inception/application-design/` — アプリケーション設計・ユニット定義
