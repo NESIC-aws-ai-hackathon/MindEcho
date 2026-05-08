@@ -28,6 +28,14 @@
 - [x] INCEPTION - User Stories
 - [x] INCEPTION - Workflow Planning
 - [x] INCEPTION - Application Design
-- [ ] INCEPTION - Units Generation (IN PROGRESS)
-- [ ] CONSTRUCTION - Per-Unit Design & Code Generation
+- [x] INCEPTION - Units Generation
+- [ ] CONSTRUCTION - Unit 0 Functional Design (IN PROGRESS)
+- [ ] CONSTRUCTION - Unit 0 Code Generation
+- [ ] CONSTRUCTION - Unit 1 Functional Design
+- [ ] CONSTRUCTION - Unit 1 Code Generation
+- [ ] CONSTRUCTION - Unit 2 Functional Design
+- [ ] CONSTRUCTION - Unit 2 Code Generation
+- [ ] CONSTRUCTION - Unit 3 Functional Design
+- [ ] CONSTRUCTION - Unit 3 Code Generation
+- [ ] CONSTRUCTION - Unit F Code Generation
 - [ ] CONSTRUCTION - Build and Test
