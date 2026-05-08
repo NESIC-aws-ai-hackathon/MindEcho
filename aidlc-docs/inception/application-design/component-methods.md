@@ -50,8 +50,7 @@ Side Effect: ユーザーの全データ（DB + S3ファイル）を削除
 #### `POST /api/media/upload`
 ```
 Input:  multipart/form-data { file: UploadFile, media_type: Optional[str] }
-        ※ media_type: "image" | "music" | "manga" | "novel"（省略時は自動判定）
-        ※ 小説テキスト直接入力の場合: JSON { text: str, media_type: "novel" }
+        ※ media_type: "image" | "music"（省略時は自動判定）
 Output: MediaUploadResponse {
           media_id: str,
           media_type: str,
@@ -99,28 +98,6 @@ Output: MusicAnalysisResult {
           mood: str,
           genre: str,
           energy_level: str
-        }
-```
-
-#### Internal: `analyze_manga(s3_key: str) -> MangaAnalysisResult`
-```
-Output: MangaAnalysisResult {
-          panel_composition: str,
-          art_style: str,
-          character_emotions: list[str],
-          story_mood: str,
-          visual_impact: str
-        }
-```
-
-#### Internal: `analyze_novel(text: str) -> NovelAnalysisResult`
-```
-Output: NovelAnalysisResult {
-          writing_style: str,
-          themes: list[str],
-          tone: str,
-          emotional_keywords: list[str],
-          narrative_mood: str
         }
 ```
 
@@ -281,7 +258,6 @@ Output: application/json ファイルダウンロード
 | LoginPage | `handleLogin(email, password)` | ログインAPI呼び出し、トークン保存 |
 | RegisterPage | `handleRegister(email, password)` | 登録API呼び出し、自動ログイン |
 | UploadPage | `handleUpload(file, mediaType)` | メディアアップロード+解析API呼び出し |
-| UploadPage | `handleTextInput(text)` | 小説テキスト直接入力 |
 | ContextPage | `loadQuestions(mediaId)` | コンテクスト設問取得 |
 | ContextPage | `submitAnswers(answers, freeText)` | 回答送信 |
 | EmotionsPage | `loadEmotions(sessionId)` | 感情選択肢取得 |

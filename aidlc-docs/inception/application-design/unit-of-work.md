@@ -8,8 +8,7 @@
 | Unit 1 | Media Analysis | メディアアップロード、S3保存、AI解析（4種別） | Yes | 2nd |
 | Unit 2 | Cognitive Mapping | コンテクスト設問生成、感情選択肢生成 | Yes | 3rd |
 | Unit 3 | Sentence Synthesis | 文章生成、再生成、履歴管理 | Yes | 4th |
-| Unit 4 | User Persona Tuning | パーソナライゼーション（スタブのみ） | No (stub) | 5th |
-| Unit F | Frontend Integration | Next.js 全ページ実装 | Yes | 6th (最後) |
+| Unit F | Frontend Integration | Next.js 全ページ実装 | Yes | 5th (最後) |
 
 ---
 
@@ -47,23 +46,21 @@
 ### 責務
 - メディアファイルアップロード（バリデーション、種別判定）
 - S3 保存
-- AI 解析（同期処理）: 画像 / 音楽 / 漫画 / 小説
+- AI 解析（同期処理）: 画像 / 音楽
 - 解析結果の正規化テーブルへの保存
 
 ### バックエンドモジュール
 - `app/media/` — router, logic, models
-- `app/media/analyzers/` — base, image_analyzer, music_analyzer, manga_analyzer, novel_analyzer
+- `app/media/analyzers/` — base, image_analyzer, music_analyzer
 
 ### 主要テーブル
 - `media_files`
 - `image_analysis_results`
 - `music_analysis_results`
-- `manga_analysis_results`
-- `novel_analysis_results`
 
 ### 成果物
 - メディアアップロード+解析 API（2エンドポイント）
-- 4種別の解析器実装（Bedrock プロンプト設計含む）
+- 2種別の解析器実装（Bedrock プロンプト設計含む）
 
 ---
 
@@ -110,26 +107,6 @@
 
 ---
 
-## Unit 4: User Persona Tuning（スタブ）
-
-### 責務（将来実装）
-- ユーザーの感情選択履歴・コンテクスト入力履歴の記録
-- 過去履歴に基づく文体・語彙の学習
-- 学習結果の感情選択肢生成・文章生成への反映
-
-### MVP スコープ
-- **インターフェース定義のみ**: 将来の拡張ポイントとなる関数シグネチャを定義
-- **スタブ実装**: 学習・反映ロジックは `pass` またはデフォルト値を返すのみ
-- **DB テーブル**: 将来用のテーブルスキーマは定義しない（実装時に追加）
-
-### バックエンドモジュール
-- `app/persona/` — router (空), logic (スタブ), models (空)
-
-### 成果物
-- スタブモジュール（将来拡張用プレースホルダー）
-
----
-
 ## Unit F: Frontend Integration
 
 ### 責務
@@ -146,7 +123,7 @@
 - `frontend/types/` — 型定義
 
 ### 実装タイミング
-- **全バックエンドユニット（Unit 0〜4）完了後に実装**
+- **全バックエンドユニット（Unit 0〜3）完了後に実装**
 - バックエンドAPIが全て動作可能な状態で統合テスト可能
 
 ### 成果物
@@ -169,8 +146,7 @@ mindecho/                          # ワークスペースルート
 │   │   │   └── analyzers/
 │   │   ├── cognitive/
 │   │   ├── synthesis/
-│   │   ├── data/
-│   │   └── persona/              # Unit 4 スタブ
+│   │   └── data/
 │   ├── alembic/                   # DBマイグレーション
 │   ├── tests/
 │   ├── requirements.txt

@@ -36,9 +36,7 @@ upload_and_analyze(file, media_type)
   ├─ save_media_record(s3_key, media_type)    # DB記録
   ├─ analyze_by_type(s3_key, media_type)      # 解析実行（同期）
   │   ├─ image  → image_analyzer.analyze()
-  │   ├─ music  → music_analyzer.analyze()
-  │   ├─ manga  → manga_analyzer.analyze()
-  │   └─ novel  → novel_analyzer.analyze()
+  │   └─ music  → music_analyzer.analyze()
   ├─ save_analysis_result(media_id, result)   # 解析結果DB保存
   └─ return MediaUploadResponse
 ```
@@ -48,8 +46,6 @@ upload_and_analyze(file, media_type)
 ANALYZERS = {
     "image": ImageAnalyzer,
     "music": MusicAnalyzer,
-    "manga": MangaAnalyzer,
-    "novel": NovelAnalyzer,
 }
 ```
 

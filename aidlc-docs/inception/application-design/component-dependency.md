@@ -91,8 +91,8 @@ Core Module
 │  │              PostgreSQL (Amazon RDS)                    │    │
 │  │                                                        │    │
 │  │  users │ media_files │ image_analysis │ music_analysis │    │
-│  │  manga_analysis │ novel_analysis │ generation_sessions │    │
-│  │  context_responses │ emotion_selections │ generated_texts│   │
+│  │  generation_sessions │ context_responses                    │    │
+│  │  emotion_selections │ free_text_inputs │ generated_texts  │    │
 │  └────────────────────────────────────────────────────────┘    │
 │                                                                  │
 │  ┌────────────────┐    ┌─────────────────┐                     │
@@ -172,7 +172,7 @@ users
 media_files
   ├── id (PK)
   ├── user_id (FK → users)
-  ├── media_type (enum: image/music/manga/novel)
+  ├── media_type (enum: image/music)
   ├── file_name
   ├── file_size
   ├── s3_key
@@ -196,24 +196,6 @@ music_analysis_results
   ├── mood (text)
   ├── genre (text)
   └── energy_level (text)
-
-manga_analysis_results
-  ├── id (PK)
-  ├── media_id (FK → media_files, UNIQUE)
-  ├── panel_composition (text)
-  ├── art_style (text)
-  ├── character_emotions (text[])
-  ├── story_mood (text)
-  └── visual_impact (text)
-
-novel_analysis_results
-  ├── id (PK)
-  ├── media_id (FK → media_files, UNIQUE)
-  ├── writing_style (text)
-  ├── themes (text[])
-  ├── tone (text)
-  ├── emotional_keywords (text[])
-  └── narrative_mood (text)
 
 generation_sessions
   ├── id (PK)

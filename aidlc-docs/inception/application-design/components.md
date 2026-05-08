@@ -53,8 +53,6 @@
 | S3保存 | アップロードファイルのS3保存、メタデータDB記録 |
 | 画像解析 | AWS Bedrock による画像の情緒的メタデータ抽出 |
 | 音楽解析 | AWS Bedrock による楽曲特徴量抽出 |
-| 漫画解析 | AWS Bedrock による漫画ページの解析 |
-| 小説解析 | AWS Bedrock による文章テキストの解析 |
 
 **インターフェース**: REST API (`/api/media/*`)  
 **依存**: Core Module（S3クライアント、Bedrockクライアント、DB）
@@ -62,8 +60,6 @@
 **サブコンポーネント**:
 - `analyzers/image_analyzer.py` — 画像解析ロジック
 - `analyzers/music_analyzer.py` — 音楽解析ロジック
-- `analyzers/manga_analyzer.py` — 漫画解析ロジック
-- `analyzers/novel_analyzer.py` — 小説解析ロジック
 
 ---
 
@@ -140,9 +136,9 @@
 
 ### COMP-F04: UploadPage (`pages/upload`)
 **責務**: メディアアップロード画面  
-**対応US**: US-2.1〜US-2.4  
-- メディア種別選択タブ（画像/音楽/漫画/小説）
-- ファイルドロップゾーン / テキスト入力エリア
+**対応US**: US-2.1、US-2.2  
+- メディア種別選択タブ（画像/音楽）
+- ファイルドロップゾーン
 - プログレスバー、プレビュー表示
 
 ### COMP-F05: AnalyzingPage (`pages/analyzing`)

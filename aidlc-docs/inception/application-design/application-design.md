@@ -35,9 +35,7 @@ app/
 │   └── analyzers/
 │       ├── base.py            # 解析器基底クラス
 │       ├── image_analyzer.py
-│       ├── music_analyzer.py
-│       ├── manga_analyzer.py
-│       └── novel_analyzer.py
+│       └── music_analyzer.py
 ├── cognitive/                 # Unit 2: 認知マッピング
 │   ├── router.py
 │   ├── logic.py

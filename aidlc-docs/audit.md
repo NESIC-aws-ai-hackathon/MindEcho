@@ -140,3 +140,24 @@
 **Context**: INCEPTION - Units Generation Part 2 complete. Awaiting user approval.
 
 ---
+
+## Units Generation - Change Request
+**Timestamp**: 2026-05-08T00:18:00Z
+**User Input**: "やはりUser Persona Tuningは含めないようにしてください。"
+**AI Response**: Removed Unit 4 (User Persona Tuning) from all unit artifacts. Updated: unit-of-work.md, unit-of-work-dependency.md, unit-of-work-story-map.md, README.md. Now 5 units: Unit 0-3 + Unit F.
+**Context**: INCEPTION - Units Generation. User requested removal of Unit 4 stub. All references removed.
+
+---
+
+## Scope Reduction - Level 2 Applied
+**Timestamp**: 2026-05-08T00:19:00Z
+**User Input**: "Level 2（メディア絞り込み）を基本方針としてスコープ削減を適用してください。漫画等の複数画像メディア小説などのテキストメディアは対象外とし、当初想定していた画像メディア（単一）と音楽メディアを対象とします。"
+**AI Response**: Applied Level 2 scope reduction across all documents:
+- Media types: image + music only (manga/novel removed from scope)
+- Should Have stories deferred: US-1.3 (password reset), US-6.3 (text editing), US-7.1 (history viewing), US-7.3 (data export)
+- Scope-out stories: US-2.3 (manga), US-2.4 (novel)
+- Updated: requirements.md, stories.md, components.md, component-methods.md, services.md, component-dependency.md, application-design.md, unit-of-work.md, unit-of-work-story-map.md, README.md
+- Result: 15 Must Have stories for MVP, 9 DB tables, 5 Bedrock prompts, 2 media analyzers
+**Context**: INCEPTION - Scope reduction for 15-day MVP development timeline. All design artifacts updated to reflect reduced scope.
+
+---

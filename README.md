@@ -26,7 +26,7 @@ MindEchoは、ユーザーが抱える「言語化の壁」を取り払うので
 ---
 
 ## 3. 主な機能 (Core Units)
-- **Media Context Extraction**: 画像・音楽・漫画・小説から「エモさの成分」を自動抽出。
+- **Media Context Extraction**: 画像・音楽から「エモさの成分」を自動抽出。
 - **Context Questionnaire**: メディアに応じたAI動的生成の選択式設問で、ユーザーの文脈を補完。
 - **Emotional Annotation Wizard**: 「整理の手間」を排除する、タップ式の感情選択インターフェース。
 - **Semantic Amplifier**: わずかな入力から、SNS投稿・日記・レビュー記事として「センスが良い」と評価されるレベルの文章へ超解像変換。
@@ -64,11 +64,10 @@ mindecho/
 │   │   ├── core/              # 設定・DB・ミドルウェア・AWSクライアント
 │   │   ├── auth/              # Unit 0: 認証
 │   │   ├── media/             # Unit 1: メディア解析
-│   │   │   └── analyzers/     # 画像/音楽/漫画/小説 解析器
+│   │   │   └── analyzers/     # 画像/音楽 解析器
 │   │   ├── cognitive/         # Unit 2: 認知マッピング
 │   │   ├── synthesis/         # Unit 3: 文章合成
-│   │   ├── data/              # データ管理
-│   │   └── persona/           # Unit 4: パーソナライゼーション (stub)
+│   │   └── data/              # データ管理
 │   ├── alembic/               # DBマイグレーション
 │   └── tests/
 ├── frontend/                   # Next.js フロントエンド
@@ -87,13 +86,12 @@ mindecho/
 | Unit | 名称 | 責務 | MVP |
 |---|---|---|---|
 | Unit 0 | Auth & Core Infrastructure | 認証、DB基盤、AWSクライアント、データ管理 | ✓ |
-| Unit 1 | Media Analysis | メディアアップロード、S3保存、AI解析（4種別） | ✓ |
+| Unit 1 | Media Analysis | メディアアップロード、S3保存、AI解析（画像・音楽） | ✓ |
 | Unit 2 | Cognitive Mapping | コンテクスト設問生成、感情選択肢生成 | ✓ |
 | Unit 3 | Sentence Synthesis | 文章生成（3形式）、再生成、編集 | ✓ |
-| Unit 4 | User Persona Tuning | パーソナライゼーション | stub |
 | Unit F | Frontend Integration | Next.js 全ページ実装 | ✓ |
 
-**開発順**: Unit 0 → Unit 1 → Unit 2 → Unit 3 → Unit 4 → Unit F
+**開発順**: Unit 0 → Unit 1 → Unit 2 → Unit 3 → Unit F
 
 ---
 
@@ -104,10 +102,10 @@ mindecho/
 ### 完了済みフェーズ
 - **Workspace Detection**: Greenfield プロジェクト検出
 - **Requirements Analysis**: 8機能要件 + 6非機能要件の定義、技術スタック選定
-- **User Stories**: 4ペルソナ、7ジャーニー、21ストーリー（15 Must Have / 6 Should Have）
+- **User Stories**: 4ペルソナ、7ジャーニー、15 Must Haveストーリー（メディア対象: 画像+音楽）
 - **Workflow Planning**: 実行計画策定（6ステージ実行、3ステージスキップ）
-- **Application Design**: コンポーネント設計、APIエンドポイント設計（19本）、DBスキーマ設計（11テーブル）
-- **Units Generation**: 6ユニット分解、依存関係定義、ストーリーマッピング（100%カバレッジ）
+- **Application Design**: コンポーネント設計、APIエンドポイント設計（19本）、DBスキーマ設計（9テーブル）
+- **Units Generation**: 5ユニット分解、依存関係定義、ストーリーマッピング
 
 ### 次フェーズ
 - **CONSTRUCTION**: Per-Unit Functional Design → Code Generation → Build and Test
