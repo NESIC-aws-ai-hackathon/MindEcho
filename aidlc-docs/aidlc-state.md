@@ -25,9 +25,9 @@
 ## Stage Progress
 - [x] INCEPTION - Workspace Detection (Greenfield detected)
 - [x] INCEPTION - Requirements Analysis
-- [ ] INCEPTION - User Stories
-- [ ] INCEPTION - Workflow Planning
-- [ ] INCEPTION - Application Design
+- [x] INCEPTION - User Stories
+- [x] INCEPTION - Workflow Planning
+- [ ] INCEPTION - Application Design (IN PROGRESS)
 - [ ] INCEPTION - Units Generation
 - [ ] CONSTRUCTION - Per-Unit Design & Code Generation
 - [ ] CONSTRUCTION - Build and Test
