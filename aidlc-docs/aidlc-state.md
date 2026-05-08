@@ -27,7 +27,7 @@
 - [x] INCEPTION - Requirements Analysis
 - [x] INCEPTION - User Stories
 - [x] INCEPTION - Workflow Planning
-- [ ] INCEPTION - Application Design (IN PROGRESS)
-- [ ] INCEPTION - Units Generation
+- [x] INCEPTION - Application Design
+- [ ] INCEPTION - Units Generation (IN PROGRESS)
 - [ ] CONSTRUCTION - Per-Unit Design & Code Generation
 - [ ] CONSTRUCTION - Build and Test
