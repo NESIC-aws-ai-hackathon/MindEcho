@@ -6,6 +6,7 @@ from app.auth.router import router as auth_router
 from app.core.config import settings
 from app.core.exceptions import AppError
 from app.data.router import router as data_router
+from app.media.router import router as media_router
 
 app = FastAPI(
     title="MindEcho API",
@@ -26,6 +27,7 @@ app.add_middleware(
 # Routers
 app.include_router(auth_router)
 app.include_router(data_router)
+app.include_router(media_router)
 
 
 # Global exception handler

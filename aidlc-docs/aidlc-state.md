@@ -31,9 +31,9 @@
 - [x] INCEPTION - Units Generation
 - [x] CONSTRUCTION - Unit 0 Functional Design
 - [x] CONSTRUCTION - Unit 0 Code Generation
-- [ ] CONSTRUCTION - Unit 1 Functional Design (IN PROGRESS)
-- [ ] CONSTRUCTION - Unit 1 Code Generation
-- [ ] CONSTRUCTION - Unit 2 Functional Design
+- [x] CONSTRUCTION - Unit 1 Functional Design
+- [x] CONSTRUCTION - Unit 1 Code Generation
+- [ ] CONSTRUCTION - Unit 2 Functional Design (IN PROGRESS)
 - [ ] CONSTRUCTION - Unit 2 Code Generation
 - [ ] CONSTRUCTION - Unit 3 Functional Design
 - [ ] CONSTRUCTION - Unit 3 Code Generation
