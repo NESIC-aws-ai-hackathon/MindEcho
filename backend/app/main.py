@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.auth.router import router as auth_router
+from app.cognitive.router import router as cognitive_router
 from app.core.config import settings
 from app.core.exceptions import AppError
 from app.data.router import router as data_router
@@ -28,6 +29,7 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(data_router)
 app.include_router(media_router)
+app.include_router(cognitive_router)
 
 
 # Global exception handler

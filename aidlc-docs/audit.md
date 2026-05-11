@@ -211,9 +211,33 @@
 ---
 
 ## Unit 1 Code Generation - Completion Approval
-**Timestamp**: 2026-05-11T01:40:00Z
+**Timestamp**: 2026-05-11T02:00:00Z
 **User Input**: "承認します。次へ進んでください。"
-**AI Response**: Unit 1 Code Generation approved. 17 files generated (7 source, 5 tests, 1 migration, 2 config updates, 1 doc, 1 init). Provider Pattern adopted for music analyzer extensibility. Proceeding to Unit 2 Functional Design.
-**Context**: CONSTRUCTION - Unit 1 Code Generation complete. All 3 stories implemented (US-2.1, US-2.2, US-3.1).
+**AI Response**: Unit 1 Code Generation approved. 17 files generated (7 source, 5 tests, 1 migration, 2 config updates, 1 init, 1 doc). Stories US-2.1, US-2.2, US-3.1 implemented. Proceeding to Unit 2 Functional Design.
+**Context**: CONSTRUCTION - Unit 1 Code Generation complete. Provider Pattern adopted for music analyzer extensibility.
+
+---
+
+## Unit 2 Functional Design - Completion Approval
+**Timestamp**: 2026-05-11T03:00:00Z
+**User Input**: "承認します。次へ進んでください。"
+**AI Response**: Unit 2 Functional Design approved. 5 entities (ContextQuestion, ContextResponse, FreeTextInput, EmotionCandidate, EmotionSelection), 22 business rules, 2 Bedrock prompts (question gen + emotion gen). Q1=A, Q2=A, Q3=C, Q4=A, Q5=A, Q6=A. Proceeding to Unit 2 Code Generation.
+**Context**: CONSTRUCTION - Unit 2 Functional Design complete.
+
+---
+
+## Unit 2 Code Generation - Plan Approval
+**Timestamp**: 2026-05-11T03:30:00Z
+**User Input**: "承認します。進めてください。"
+**AI Response**: Unit 2 CG plan approved. 11 steps: models/schemas, question generator, emotion generator, business logic, API router, Unit 1 integration, 4 test files, migration, main.py integration, docs. Proceeding to execution.
+**Context**: CONSTRUCTION - Unit 2 Code Generation Part 1 (Planning) complete. Starting Part 2 (Generation).
+
+---
+
+## Unit 2 Code Generation - Completion Approval
+**Timestamp**: 2026-05-11T04:00:00Z
+**User Input**: "次のステージへ進んでください。"
+**AI Response**: Unit 2 Code Generation complete. 13 files (6 source, 2 modified, 4 tests, 1 migration). Stories US-4.1, US-4.2, US-5.1 implemented. Proceeding to Unit 3 Functional Design.
+**Context**: CONSTRUCTION - Unit 2 Code Generation complete. Starting Unit 3 FD.
 
 ---

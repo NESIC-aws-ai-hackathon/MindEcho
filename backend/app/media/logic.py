@@ -143,6 +143,18 @@ async def upload_and_analyze(
     session.media_type = media_type
 
     await db.flush()
+
+    # 8. Generate context questions (non-blocking: failure doesn't fail upload)
+    try:
+        from app.cognitive.question_generator import generate_questions
+        await generate_questions(db, session_id, media_file, image_analysis, music_analysis)
+    except Exception:
+        logger.warning(
+            "Question generation failed for session %s, will use fallback later",
+            session_id,
+            exc_info=True,
+        )
+
     return media_file, image_analysis, music_analysis
 
 
