@@ -169,3 +169,27 @@
 **Context**: INCEPTION - Units Generation completed. 5 units (Unit 0-3 + Unit F), 15 MVP stories, image+music scope.
 
 ---
+
+## Unit 0 Functional Design - Approval
+**Timestamp**: 2026-05-11T00:01:00Z
+**User Input**: "承認します。次へ進んでください。"
+**AI Response**: Unit 0 Functional Design approved. 3 artifacts created (domain-entities.md, business-logic-model.md, business-rules.md). Proceeding to Code Generation (Unit 0).
+**Context**: CONSTRUCTION - Unit 0 Functional Design completed. 23 business rules defined, 2 entities, 6-stage session lifecycle.
+
+---
+
+## Unit 0 Code Generation - Plan Approval
+**Timestamp**: 2026-05-11T00:02:00Z
+**User Input**: "承認します。実装を開始してください。"
+**AI Response**: Code Generation plan approved. Beginning implementation of 12 steps, 31 files for Unit 0.
+**Context**: CONSTRUCTION - Unit 0 Code Generation Part 1 (Planning) complete. Proceeding to Part 2 (Generation).
+
+---
+
+## Unit 0 Code Generation - Completion Approval
+**Timestamp**: 2026-05-11T00:03:00Z
+**User Input**: "次へ進んでください。"
+**AI Response**: Unit 0 Code Generation approved. 31 files generated (12 source, 6 tests, 4 config, 3 migration, 1 infra, 1 doc, 4 init). Proceeding to Unit 1 Functional Design.
+**Context**: CONSTRUCTION - Unit 0 Code Generation complete. All 4 stories implemented (US-1.1, US-1.2, US-7.2, US-7.4).
+
+---
