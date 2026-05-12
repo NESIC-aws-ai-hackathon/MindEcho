@@ -241,3 +241,34 @@
 **Context**: CONSTRUCTION - Unit 2 Code Generation complete. Starting Unit 3 FD.
 
 ---
+
+## Unit 3 Functional Design - Questions & Answers
+**Timestamp**: 2026-05-12T00:30:00Z
+**User Input**: "回答が完了しました。確認してください。" (Answers: Q1=A, Q2=A, Q3=A, Q4=A, Q5=A, Q6=B)
+**AI Response**: All 6 answers clear and unambiguous. Generated 3 FD artifacts: domain-entities.md (GeneratedText entity), business-logic-model.md (generate/regenerate flows, 3 Bedrock prompts, context integration), business-rules.md (18 rules BR-SYN-01 through BR-SYN-18). Presenting for approval.
+**Context**: CONSTRUCTION - Unit 3 Functional Design artifacts generated.
+
+---
+
+## Unit 3 Functional Design - Completion Approval
+**Timestamp**: 2026-05-12T01:00:00Z
+**User Input**: "次へ進んでください"
+**AI Response**: Unit 3 Functional Design approved. 1 entity (GeneratedText), 18 business rules, 3 Bedrock prompts (SNS/diary/review), 3 API endpoints. Proceeding to Unit 3 Code Generation.
+**Context**: CONSTRUCTION - Unit 3 Functional Design complete. Starting Unit 3 CG.
+
+---
+
+## Unit 3 Code Generation - Plan Approval
+**Timestamp**: 2026-05-12T01:30:00Z
+**User Input**: "このプランで進めてください"
+**AI Response**: Unit 3 CG plan approved. 9 steps: models, text generator, logic, router, 3 test files, migration, main.py, docs. Proceeding to execution.
+**Context**: CONSTRUCTION - Unit 3 Code Generation Part 1 (Planning) complete. Starting Part 2 (Generation).
+
+---
+
+## Unit 3 Code Generation - Execution Complete
+**Timestamp**: 2026-05-12T02:00:00Z
+**AI Response**: Unit 3 CG 全9ステップ完了。生成ファイル: synthesis/__init__.py, models.py, text_generator.py, logic.py, router.py, test_text_generator.py, test_synthesis_logic.py, test_synthesis_router.py, 004_synthesis_tables.py, main.py更新, code-summary.md。API 3エンドポイント、テスト26ケース。ユーザー承認待ち。
+**Context**: CONSTRUCTION - Unit 3 Code Generation Part 2 (Generation) complete. Awaiting user approval.
+
+---

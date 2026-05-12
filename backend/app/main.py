@@ -8,6 +8,7 @@ from app.core.config import settings
 from app.core.exceptions import AppError
 from app.data.router import router as data_router
 from app.media.router import router as media_router
+from app.synthesis.router import router as synthesis_router
 
 app = FastAPI(
     title="MindEcho API",
@@ -30,6 +31,7 @@ app.include_router(auth_router)
 app.include_router(data_router)
 app.include_router(media_router)
 app.include_router(cognitive_router)
+app.include_router(synthesis_router)
 
 
 # Global exception handler

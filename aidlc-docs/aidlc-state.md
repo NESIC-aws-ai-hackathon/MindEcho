@@ -35,7 +35,7 @@
 - [x] CONSTRUCTION - Unit 1 Code Generation
 - [x] CONSTRUCTION - Unit 2 Functional Design
 - [x] CONSTRUCTION - Unit 2 Code Generation
-- [ ] CONSTRUCTION - Unit 3 Functional Design (IN PROGRESS)
-- [ ] CONSTRUCTION - Unit 3 Code Generation
-- [ ] CONSTRUCTION - Unit F Code Generation
+- [x] CONSTRUCTION - Unit 3 Functional Design
+- [x] CONSTRUCTION - Unit 3 Code Generation
+- [ ] CONSTRUCTION - Unit F Code Generation (NEXT)
 - [ ] CONSTRUCTION - Build and Test
